@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nothing Todo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>nothing<span class="accent">todo</span></h1>
+            <div class="theme-toggle" id="themeToggle">
+                <div class="dot-matrix">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="add-task-container">
+                <input type="text" id="taskInput" placeholder="Add a new task..." autocomplete="off">
+                <button id="addTaskBtn" class="btn-add">
+                    <div class="dot-matrix">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </button>
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+                <button class="filter-btn" data-filter="priority">Priority</button>
+            </div>
+
+            <div class="task-list-container">
+                <ul id="taskList" class="task-list"></ul>
+            </div>
+
+            <div class="task-stats">
+                <span id="taskCount">0 tasks left</span>
+                <button id="clearCompletedBtn">Clear completed</button>
+            </div>
+        </main>
+
+        <div class="task-dialog" id="taskDialog">
+            <div class="dialog-content">
+                <div class="dialog-header">
+                    <h2>Task Details</h2>
+                    <button class="close-btn" id="closeDialogBtn">×</button>
+                </div>
+                <div class="dialog-body">
+                    <input type="text" id="editTaskInput" placeholder="Task name">
+                    <div class="task-options">
+                        <div class="option">
+                            <label for="taskPriority">Priority</label>
+                            <input type="checkbox" id="taskPriority">
+                        </div>
+                        <div class="option">
+                            <label for="taskDueDate">Due Date</label>
+                            <input type="date" id="taskDueDate">
+                        </div>
+                    </div>
+                    <textarea id="taskNotes" placeholder="Add notes..."></textarea>
+                </div>
+                <div class="dialog-footer">
+                    <button class="btn-cancel" id="cancelEditBtn">Cancel</button>
+                    <button class="btn-save" id="saveTaskBtn">Save</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay" id="overlay"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
